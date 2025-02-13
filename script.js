@@ -2,62 +2,56 @@ let noClicks = 1;
 const maxNoClicks = 4;
 const minNoScale = 0.65;
 let noScale = 1;
-let yesScale = 1; // This now tracks the scaling factor directly
-const gifElement = document.getElementById("togepi-gif");
-const noButton = document.getElementById("no-btn");
-const yesButton = document.getElementById("yes-btn");
-const buttonContainer = document.querySelector(".btn-container");
-const yesButtonStyle = window.getComputedStyle(yesButton);
-const maxYesWidth = parseFloat(yesButtonStyle.maxWidth);
+let yesScale = 1;
 
-// array of gifs - updated order
-const gifs = ["assets/images/meholdingroses.png", "assets/images/revysad.png", "assets/images/mesad.png"];
+window.onload = function() {
+    const gifElement = document.getElementById("togepi-gif");
+    const noButton = document.getElementById("no-btn");
+    const yesButton = document.getElementById("yes-btn");
+    const buttonContainer = document.querySelector(".btn-container");
+    const yesButtonStyle = window.getComputedStyle(yesButton);
+    const maxYesWidth = parseFloat(yesButtonStyle.maxWidth);
 
-// array of messages
-const buttonMessages = [
-    "If you press yes there's sexy photos afterwards",
-    "You better take that back",
-    "OI! :(",
-    "I'm gonna beat you so hard"
-];
-
-// no button clicked
-noButton.addEventListener("click", () => {
-    if (noClicks < maxNoClicks) {
-        // change image
-        gifElement.src = gifs[Math.min(noClicks, gifs.length - 1)];
+    if (!gifElement || !noButton || !yesButton || !buttonContainer) {
+        console.error("One or more elements are missing from the DOM.");
+        return;
     }
 
-    // change no button text
-    noButton.textContent = buttonMessages[noClicks % maxNoClicks];
+    const gifs = [
+        "assets/images/meholdingroses.png",
+        "assets/images/revysad.png",
+        "assets/images/mesad.png"
+    ];
 
-    // Adjust button width to fit text
-    noButton.style.width = 'auto';
-    noButton.style.width = `${noButton.scrollWidth}px`;
+    const buttonMessages = [
+        "If you press yes there's sexy photos afterwards",
+        "You better take that back",
+        "OI! :(",
+        "I'm gonna beat you so hard"
+    ];
 
-    // decrease the size of the no button
-    if (noScale > minNoScale) {
-        noScale -= 0.1;
-        noButton.style.transform = `scale(${noScale})`;
-    }
+    noButton.addEventListener("click", () => {
+        if (noClicks < maxNoClicks) {
+            gifElement.src = gifs[Math.min(noClicks, gifs.length - 1)];
+        }
 
-    // Calculate the scaled width of the yesButton
-    const baseWidth = parseFloat(yesButtonStyle.width);
-    const scaledWidth = baseWidth * yesScale;
+        noButton.textContent = buttonMessages[noClicks % maxNoClicks];
+        noButton.style.width = 'auto';
+        noButton.style.width = `${noButton.scrollWidth}px`;
 
-    console.log(`Scaled Width: ${scaledWidth}, Max Width: ${maxYesWidth}`);
+        if (noScale > minNoScale) {
+            noScale -= 0.1;
+            noButton.style.transform = `scale(${noScale})`;
+        }
 
-    // Check if the scaled width is less than the max width
-    if (scaledWidth < maxYesWidth) {
-        yesScale += 0.5;
-        yesButton.style.transform = `scale(${yesScale})`;
-    }
+        const baseWidth = parseFloat(yesButtonStyle.width);
+        const scaledWidth = baseWidth * yesScale;
 
-    // increment the number of clicks
-    noClicks++;
-});
+        if (scaledWidth < maxYesWidth) {
+            yesScale += 0.5;
+            yesButton.style.transform = `scale(${yesScale})`;
+        }
 
-
-    // increment the number of clicks
-    noClicks++;
-});
+        noClicks++;
+    });
+};
