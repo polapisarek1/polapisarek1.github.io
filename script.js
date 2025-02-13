@@ -21,8 +21,9 @@ const gifs = ["assets/images/mehappy.png", "assets/images/revysad.png", "assets/
 const buttonMessages = ["You take that back", "Im gonna beat you so hard", "Oi :(", "If you say yes theres sexy photos after"];
 
 if (!noButton) {
-    console.error("Error: Button with ID 'no-btn' not found!");
-    return;
+    console.error("Warning: No button not found, check HTML!");
+}
+
 }
 
 // no button clicked
