@@ -20,7 +20,7 @@ window.onload = function() {
     if (inputElement) {
         inputElement.valueAsNumber = 42;
     } else {
-        console.error("Element with ID 'your-element-id' not found.");
+        console.error("Element with ID 'your-element-id' not found. Make sure it exists in index.html.");
     }
 
     const yesButtonStyle = window.getComputedStyle(yesButton);
