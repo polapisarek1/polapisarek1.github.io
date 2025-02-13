@@ -82,13 +82,13 @@ button:hover {
     background-color: #db4e4e;
 }
 
-/* ✅ New Style for Video Page */
+/* ✅ New Style for Smaller Video */
 video {
-    margin-top: 20px;
+    width: 350px;
     border-radius: 10px;
 }
 
-/* ✅ New Style for "Back" Button on video.html */
+/* ✅ Style for "Back" Button */
 #more-btn, #back-btn {
     background-color: green;
     color: white;
