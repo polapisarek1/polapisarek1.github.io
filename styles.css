@@ -6,7 +6,7 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-    overflow: visible; /* Ensures all content is visible */
+    overflow: visible;
 }
 
 body {
@@ -20,13 +20,107 @@ body {
     font-family: "Steph", sans-serif;
 }
 
-/* ✅ Fixed Font Paths */
+/* ✅ FIXED FONT PATHS */
 @font-face {
     font-family: "Steph";
-    src: url("assets/fonts/steph-font.ttf") format("truetype");
+    src: url("./assets/fonts/steph-font.ttf") format("truetype");
     font-weight: normal;
 }
 
 @font-face {
     font-family: "Steph";
-    src: url("assets/fonts/steph-font-bold.ttf") format("truetyp
+    src: url("./assets/fonts/steph-font-bold.ttf") format("truetype");
+    font-weight: bold;
+}
+
+/* ✅ Favicon Fix */
+link[rel="icon"] {
+    display: none;
+}
+
+.container {
+    max-width: 100%;
+    margin: 20px auto 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+#meholdingroses {
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    width: 500px;
+    height: auto;
+    object-fit: cover;
+}
+
+h1 {
+    font-size: 3rem;
+    margin: 50px auto;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 75px;
+    margin-top: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+button {
+    border-radius: 8px;
+    min-width: 100px;
+    max-width: 550px;
+    border: none;
+    cursor: pointer;
+    padding: 10px 15px;
+    white-space: nowrap;
+    font-size: 1.3rem;
+    font-weight: 600;
+    transition: transform 0.1s ease;
+}
+
+button:hover {
+    scale: 1.05;
+}
+
+#yes-btn {
+    transform-origin: center top;
+    color: white;
+    background-color: #57915e;
+}
+
+#no-btn {
+    color: white;
+    background-color: #db4e4e;
+}
+
+@media (max-width: 1150px) {
+    :root {
+        --gap-scale-factor: 200;
+    }
+
+    body {
+        padding-top: 70px;
+    }
+
+    .container {
+        max-width: 100%;
+        margin: 0;
+    }
+
+    #meholdingroses {
+        width: 380px;
+        height: auto;
+        object-fit: cover;
+    }
+
+    h1 {
+        font-size: 2rem;
+        margin: 50px auto;
+    }
+
+    .btn-container {
+ 
