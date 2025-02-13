@@ -6,7 +6,7 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-    overflow: visible; /* Fixed: Changed from hidden to visible */
+    overflow: visible; /* Ensures all content is visible */
 }
 
 body {
@@ -23,25 +23,15 @@ body {
 /* ✅ Fixed Font Paths */
 @font-face {
     font-family: "Steph";
-    src: url("./assets/fonts/steph-font.ttf") format("truetype");
+    src: url("/assets/fonts/steph-font.ttf") format("truetype");
     font-weight: normal;
 }
 
 @font-face {
     font-family: "Steph";
-    src: url("./assets/fonts/steph-font-bold.ttf") format("truetype");
+    src: url("/assets/fonts/steph-font-bold.ttf") format("truetype");
     font-weight: bold;
 }
 
 .container {
     max-width: 100%;
-    margin: 20px auto 0 auto;
-    position: relative;
-    z-index: 2; /* Ensures text & buttons appear above image */
-}
-
-#meholdingroses {
-    display: block;
-    margin: 0 auto;
-    position: relative;
-    z-index: 1; /* Ens
