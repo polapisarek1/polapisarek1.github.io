@@ -5,18 +5,27 @@ document.addEventListener("DOMContentLoaded", function() {
     let noScale = 1;
     let yesScale = 1;
 
+    // ✅ Make sure all elements exist before running script
     const gifElement = document.getElementById("meholdingroses");
     const noButton = document.getElementById("no-btn");
     const yesButton = document.getElementById("yes-btn");
-    const buttonContainer = document.querySelector(".btn-container");
-    const yesButtonStyle = window.getComputedStyle(yesButton);
-    const maxYesWidth = parseFloat(yesButtonStyle.maxWidth);
 
     if (!gifElement) {
-        console.error("Error: Image with ID 'meholdingroses' not found!");
+        console.error("❌ Error: Image with ID 'meholdingroses' not found!");
+        return;
     }
 
-    // Array of gifs - in order
+    if (!noButton) {
+        console.error("❌ Error: Button with ID 'no-btn' not found!");
+        return;
+    }
+
+    if (!yesButton) {
+        console.error("❌ Error: Button with ID 'yes-btn' not found!");
+        return;
+    }
+
+    // ✅ Image change logic
     const gifs = [
         "assets/images/mehappy.png",
         "assets/images/revysad.png",
@@ -24,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function() {
         "assets/images/mesad.png"
     ];
 
-    // Array of messages
+    // ✅ Button messages
     const buttonMessages = [
         "You take that back",
         "I'm gonna beat you so hard",
@@ -32,34 +41,9 @@ document.addEventListener("DOMContentLoaded", function() {
         "If you say yes there's sexy photos after"
     ];
 
-    if (!noButton) {
-        console.error("Warning: No button not found, check HTML!");
-        return; // Stop script if No button is missing
-    }
-
-    // No button clicked
+    // ✅ No button click event
     noButton.addEventListener("click", () => {
-        console.log("No button clicked!"); // ✅ Log when the button is clicked
+        console.log("No button clicked!"); 
 
         if (noClicks < maxNoClicks) {
-            console.log(`Changing image to: ${gifs[noClicks]}`); // ✅ Log the new image path
-            gifElement.src = gifs[noClicks];
-        }
-
-        // Change No button text
-        noButton.textContent = buttonMessages[noClicks % maxNoClicks];
-
-        // Adjust No button width
-        noButton.style.width = 'auto';
-        noButton.style.width = `${noButton.scrollWidth}px`;
-
-        // Shrink No button
-        if (noScale > minNoScale) {
-            noScale -= 0.1;
-            noButton.style.transform = `scale(${noScale})`;
-        }
-
-        // Increment No clicks count
-        noClicks++;
-    });
-});
+            console.log(`Changing image to: ${gifs[no
