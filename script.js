@@ -1,3 +1,4 @@
+document.addEventListener("DOMContentLoaded", function() {
 let noClicks = 1;
 const maxNoClicks = 4;
 const minNoScale = 0.65;
@@ -11,7 +12,7 @@ const yesButtonStyle = window.getComputedStyle(yesButton);
 const maxYesWidth = parseFloat(yesButtonStyle.maxWidth);
 
 // array of gifs - in order
-const gifs = ["assets/images/mehappy", "assets/images/revysad.png", "assets/images/mesad.png", "assets/images/mesad.png"];
+const gifs = ["assets/images/mehappy.png", "assets/images/revysad.png", "assets/images/mesad.png", "assets/images/mesad.png"];
 // array of messages
 const buttonMessages = ["You take that back", "Im gonna beat you so hard", "Oi :(", "If you say yes theres sexy photos after"];
 
