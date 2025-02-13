@@ -6,7 +6,7 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-    overflow: visible; /* ✅ Changed from hidden to visible */
+    overflow: visible; /* Fixed: Changed from hidden to visible */
 }
 
 body {
@@ -20,15 +20,16 @@ body {
     font-family: "Steph", sans-serif;
 }
 
+/* ✅ Fixed Font Paths */
 @font-face {
     font-family: "Steph";
-    src: url("assets/fonts/steph-font.ttf");
+    src: url("./assets/fonts/steph-font.ttf") format("truetype");
     font-weight: normal;
 }
 
 @font-face {
     font-family: "Steph";
-    src: url("assets/fonts/steph-font-bold.ttf");
+    src: url("./assets/fonts/steph-font-bold.ttf") format("truetype");
     font-weight: bold;
 }
 
@@ -36,133 +37,11 @@ body {
     max-width: 100%;
     margin: 20px auto 0 auto;
     position: relative;
-    z-index: 2; /* ✅ Makes sure text and buttons appear above the image */
+    z-index: 2; /* Ensures text & buttons appear above image */
 }
 
 #meholdingroses {
     display: block;
     margin: 0 auto;
     position: relative;
-    z-index: 1; /* ✅ Ensures the image stays in the background */
-    width: 500px;
-    height: auto;
-    object-fit: cover;
-}
-
-h1 {
-    font-size: 3rem;
-    margin: 50px auto;
-}
-
-.btn-container {
-    display: flex;
-    justify-content: center;
-    gap: 75px;
-    margin-top: 20px; /* ✅ Ensures buttons are visible */
-    position: relative;
-    z-index: 2; /* ✅ Ensures buttons are above the image */
-}
-
-button {
-    border-radius: 8px;
-    min-width: 100px;
-    max-width: 550px;
-    border: none;
-    cursor: pointer;
-    padding: 10px 15px;
-    white-space: nowrap;
-    font-size: 1.3rem;
-    font-weight: 600;
-    transition: transform 0.1s ease;
-}
-
-button:hover {
-    scale: 1.05;
-}
-
-#yes-btn {
-    transform-origin: center top;
-    color: white;
-    background-color: #57915e;
-}
-
-#no-btn {
-    color: white;
-    background-color: #db4e4e;
-}
-
-@media (max-width: 1150px) {
-    :root {
-        --gap-scale-factor: 200;
-    }
-
-    body {
-        padding-top: 70px;
-    }
-
-    .container {
-        max-width: 100%;
-        margin: 0;
-    }
-
-    #meholdingroses {
-        width: 380px;
-        height: auto;
-        object-fit: cover;
-    }
-
-    h1 {
-        font-size: 2rem;
-        margin: 50px auto;
-    }
-
-    .btn-container {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-    }
-
-    button {
-        border-radius: 8px;
-        min-width: 100px;
-        max-width: 400px;
-        padding: 10px 12px;
-        font-size: 1rem;
-    }
-}
-
-@media (max-width: 600px) {
-    :root {
-        --gap-scale-factor: 50;
-    }
-
-    body {
-        padding-top: 100px;
-    }
-
-    .container {
-        max-width: 100%;
-        margin: 0;
-    }
-
-    #meholdingroses {
-        width: 300px;
-        height: auto;
-    }
-
-    h1 {
-        font-size: 1.4rem;
-        margin: 32px auto;
-    }
-
-    .btn-container {
-        gap: 10px;
-    }
-
-    button {
-        min-width: 60px;
-        max-width: 175px;
-        padding: 10px 12px;
-        font-size: 0.8rem;
-    }
-}
+    z-index: 1; /* Ens
