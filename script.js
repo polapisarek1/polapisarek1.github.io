@@ -20,6 +20,11 @@ const gifs = ["assets/images/mehappy.png", "assets/images/revysad.png", "assets/
 // array of messages
 const buttonMessages = ["You take that back", "Im gonna beat you so hard", "Oi :(", "If you say yes theres sexy photos after"];
 
+if (!noButton) {
+    console.error("Error: Button with ID 'no-btn' not found!");
+    return;
+}
+
 // no button clicked
 noButton.addEventListener("click", () => {
     console.log("No button clicked!"); // ✅ Log when the button is clicked
