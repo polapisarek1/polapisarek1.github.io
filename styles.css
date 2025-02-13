@@ -1,83 +1,32 @@
-:root {
-    --gap-scale-factor: 250;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanks for being my Valentine!</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <img src="assets/images/mehappy.png" id="togepi-gif" alt="A cute picture of you happy"/>
+        <h1 id="message">I LOVE YOU SEXY!!! HEHEHE</h1>
 
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-}
+        <!-- New Button to Show Video -->
+        <button id="more-btn" style="background-color: green; color: white; padding: 10px 20px; border: none; cursor: pointer; font-size: 1.2rem; margin-top: 15px;">Press for more</button>
 
-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    text-align: center;
-    margin: 0;
-    padding: 75px 0;
-    background: linear-gradient(#ffffff, #f9d6d6);
-    font-family: "Steph", sans-serif;
-}
+        <!-- Video (Initially Hidden) -->
+        <div id="video-container" style="display: none; margin-top: 20px;">
+            <video width="500" controls>
+                <source src="assets/videos/videokiss.mov" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
 
-@font-face {
-    font-family: "Steph";
-    src: url("assets/fonts/steph-font.ttf");
-    font-weight: normal;
-}
-
-@font-face {
-    font-family: "Steph";
-    src: url("assets/fonts/steph-font-bold.ttf");
-    font-weight: bold;
-}
-
-.container {
-    max-width: 100%;
-    margin: 20px auto 0 auto;
-}
-
-#togepi-gif {
-    width: 500px;
-    height: 400px;
-    object-fit: cover;
-}
-
-h1 {
-    font-size: 3rem;
-    margin: 50px auto;
-}
-
-.btn-container {
-    display: flex;
-    justify-content: center;
-    gap: 75px;
-}
-
-button {
-    border-radius: 8px;
-    min-width: 100px;
-    max-width: 550px;
-    border: none;
-    cursor: pointer;
-    padding: 10px 15px;
-    white-space: nowrap;
-    font-size: 1.3rem;
-    font-weight: 600;
-    transition: transform 0.1s ease;
-}
-
-button:hover {
-    scale: 1.05;
-}
-
-#yes-btn {
-    transform-origin: center top;
-    color: white;
-    background-color: #57915e;
-}
-
-#no-btn {
-    color: white;
-    background-color: #db4e4e;
-}
+    <script>
+        document.getElementById("more-btn").addEventListener("click", function() {
+            document.getElementById("video-container").style.display = "block";
+        });
+    </script>
+</body>
+</html>
