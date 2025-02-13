@@ -16,8 +16,9 @@ window.onload = function() {
         return;
     }
 
+    // ✅ Check if input exists before modifying valueAsNumber
     if (inputElement) {
-        inputElement.valueAsNumber = 42; // Ensure this element exists
+        inputElement.valueAsNumber = 42;
     } else {
         console.error("Element with ID 'your-element-id' not found.");
     }
