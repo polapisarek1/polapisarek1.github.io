@@ -23,15 +23,10 @@ body {
 /* ✅ Fixed Font Paths */
 @font-face {
     font-family: "Steph";
-    src: url("/assets/fonts/steph-font.ttf") format("truetype");
+    src: url("assets/fonts/steph-font.ttf") format("truetype");
     font-weight: normal;
 }
 
 @font-face {
     font-family: "Steph";
-    src: url("/assets/fonts/steph-font-bold.ttf") format("truetype");
-    font-weight: bold;
-}
-
-.container {
-    max-width: 100%;
+    src: url("assets/fonts/steph-font-bold.ttf") format("truetyp
