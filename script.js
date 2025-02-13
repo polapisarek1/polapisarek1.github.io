@@ -3,7 +3,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const maxNoClicks = 4;
     const minNoScale = 0.65;
     let noScale = 1;
-    let yesScale = 1; // This now tracks the scaling factor directly
+    let yesScale = 1;
+
     const gifElement = document.getElementById("meholdingroses");
     const noButton = document.getElementById("no-btn");
     const yesButton = document.getElementById("yes-btn");
@@ -15,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function() {
         console.error("Error: Image with ID 'meholdingroses' not found!");
     }
 
-    // array of gifs - in order
+    // Array of gifs - in order
     const gifs = [
         "assets/images/mehappy.png",
         "assets/images/revysad.png",
@@ -23,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function() {
         "assets/images/mesad.png"
     ];
 
-    // array of messages
+    // Array of messages
     const buttonMessages = [
         "You take that back",
         "I'm gonna beat you so hard",
@@ -33,9 +34,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
     if (!noButton) {
         console.error("Warning: No button not found, check HTML!");
+        return; // Stop script if No button is missing
     }
 
-    // no button clicked
+    // No button clicked
     noButton.addEventListener("click", () => {
         console.log("No button clicked!"); // ✅ Log when the button is clicked
 
