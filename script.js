@@ -9,11 +9,17 @@ window.onload = function() {
     const noButton = document.getElementById("no-btn");
     const yesButton = document.getElementById("yes-btn");
     const buttonContainer = document.querySelector(".btn-container");
-    
-    // Ensuring elements exist before modifying them
+    const inputElement = document.getElementById("your-element-id");
+
     if (!gifElement || !noButton || !yesButton || !buttonContainer) {
         console.error("One or more elements are missing from the DOM.");
         return;
+    }
+
+    if (inputElement) {
+        inputElement.valueAsNumber = 42; // Ensure this element exists
+    } else {
+        console.error("Element with ID 'your-element-id' not found.");
     }
 
     const yesButtonStyle = window.getComputedStyle(yesButton);
