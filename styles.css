@@ -90,6 +90,7 @@ button:hover {
 body {
     padding-top: 70px;
 }
+
 .container {
     max-width: 100%;
     margin: 0;
@@ -130,9 +131,11 @@ button {
 :root {
     --gap-scale-factor: 50;
 }
+
 body {
     padding-top: 100px;
 }
+
 .container {
     max-width: 100%;
     margin: 0;
