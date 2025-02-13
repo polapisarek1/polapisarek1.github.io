@@ -10,6 +10,23 @@
     <div class="container">
         <img src="assets/images/mehappy.png" id="togepi-gif" alt="A cute picture of you happy"/>
         <h1 id="message">I LOVE YOU SEXY!!! HEHEHE</h1>
+
+        <!-- New Button to Show Video -->
+        <button id="more-btn" style="background-color: green; color: white; padding: 10px 20px; border: none; cursor: pointer; font-size: 1.2rem; margin-top: 15px;">Press for more</button>
+
+        <!-- Video (Initially Hidden) -->
+        <div id="video-container" style="display: none; margin-top: 20px;">
+            <video width="500" controls>
+                <source src="assets/videos/videokiss.mov" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
     </div>
+
+    <script>
+        document.getElementById("more-btn").addEventListener("click", function() {
+            document.getElementById("video-container").style.display = "block";
+        });
+    </script>
 </body>
 </html>
