@@ -16,7 +16,6 @@ window.onload = function() {
         return;
     }
 
-    // ✅ Check if input exists before modifying valueAsNumber
     if (inputElement) {
         inputElement.valueAsNumber = 42;
     } else {
