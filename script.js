@@ -4,18 +4,20 @@ const minNoScale = 0.65;
 let noScale = 1;
 let yesScale = 1;
 
+// Ensure script runs only after the page is fully loaded
 window.onload = function() {
     const gifElement = document.getElementById("togepi-gif");
     const noButton = document.getElementById("no-btn");
     const yesButton = document.getElementById("yes-btn");
     const buttonContainer = document.querySelector(".btn-container");
-    const yesButtonStyle = window.getComputedStyle(yesButton);
-    const maxYesWidth = parseFloat(yesButtonStyle.maxWidth);
 
     if (!gifElement || !noButton || !yesButton || !buttonContainer) {
         console.error("One or more elements are missing from the DOM.");
         return;
     }
+
+    const yesButtonStyle = window.getComputedStyle(yesButton);
+    const maxYesWidth = parseFloat(yesButtonStyle.maxWidth);
 
     const gifs = [
         "assets/images/meholdingroses.png",
@@ -39,19 +41,4 @@ window.onload = function() {
         noButton.style.width = 'auto';
         noButton.style.width = `${noButton.scrollWidth}px`;
 
-        if (noScale > minNoScale) {
-            noScale -= 0.1;
-            noButton.style.transform = `scale(${noScale})`;
-        }
-
-        const baseWidth = parseFloat(yesButtonStyle.width);
-        const scaledWidth = baseWidth * yesScale;
-
-        if (scaledWidth < maxYesWidth) {
-            yesScale += 0.5;
-            yesButton.style.transform = `scale(${yesScale})`;
-        }
-
-        noClicks++;
-    });
-};
+        if (n
