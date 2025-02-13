@@ -123,4 +123,52 @@ button:hover {
     }
 
     .btn-container {
- 
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    button {
+        border-radius: 8px;
+        min-width: 100px;
+        max-width: 400px;
+        padding: 10px 12px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    :root {
+        --gap-scale-factor: 50;
+    }
+
+    body {
+        padding-top: 100px;
+    }
+
+    .container {
+        max-width: 100%;
+        margin: 0;
+    }
+
+    #meholdingroses {
+        width: 300px;
+        height: auto;
+    }
+
+    h1 {
+        font-size: 1.4rem;
+        margin: 32px auto;
+    }
+
+    .btn-container {
+        gap: 10px;
+    }
+
+    button {
+        min-width: 60px;
+        max-width: 175px;
+        padding: 10px 12px;
+        font-size: 0.8rem;
+    }
+}
